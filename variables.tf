@@ -103,7 +103,7 @@ variable "log_options" {
 }
 
 variable "mount_points" {
-  type        = list(map(string)
+  type        = list(map(string))
   description = "Container mount points. This is a list of maps, where each map should contain a `containerPath` and `sourceVolume`"
   default     = []
   #default     = [
@@ -159,4 +159,3 @@ variable "stop_timeout" {
   description = "Timeout in seconds between sending SIGTERM and SIGKILL to container"
   default     = 30
 }
-
