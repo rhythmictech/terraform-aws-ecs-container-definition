@@ -74,7 +74,7 @@ variable "environment" {
 }
 
 variable "secrets" {
-  type        = list(string)
+  type        = list(map(string))
   description = "The secrets to pass to the container. This is a list of maps"
   default     = []
 }
