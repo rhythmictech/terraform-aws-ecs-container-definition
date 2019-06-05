@@ -68,7 +68,7 @@ variable "working_directory" {
 }
 
 variable "environment" {
-  type        = list(string)
+  type        = list(map(string))
   description = "The environment variables to pass to the container. This is a list of maps"
   default     = []
 }
@@ -103,7 +103,7 @@ variable "log_options" {
 }
 
 variable "mount_points" {
-  type        = list(string)
+  type        = list(map(string)
   description = "Container mount points. This is a list of maps, where each map should contain a `containerPath` and `sourceVolume`"
   default     = []
   #default     = [
@@ -121,7 +121,7 @@ variable "dns_servers" {
 }
 
 variable "ulimits" {
-  type        = list(string)
+  type        = list(map(string))
   description = "Container ulimit settings. This is a list of maps, where each map should contain \"name\", \"hardLimit\" and \"softLimit\""
   default     = []
 }
@@ -133,7 +133,7 @@ variable "repository_credentials" {
 }
 
 variable "volumes_from" {
-  type        = list(string)
+  type        = list(map(string))
   description = "A list of VolumesFrom maps which contain \"sourceContainer\" (name of the container that has the volumes to mount) and \"readOnly\" (whether the container can write to the volume)."
   default     = []
 }
